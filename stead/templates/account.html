@@ -1,0 +1,80 @@
+{% extends 'layout.html'%}
+
+{% block content%}
+  <div class="container-fluid">
+      <div class="row" style="background-color: rgba(34, 48, 180, 0.795);">
+        <div class="col-md-4 col-sm-12 pl-5 px-5 py-5">
+          <h1 style="color: white;">Your info</h1>
+        </div>
+
+        <div class="col-md-8 col-sm-12 pl-5 px-5 py-5">
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <i class="fa fa-key" style="font-size: 30px; color: white;"></i><br>
+              <a href="" style="color: white; text-decoration: none;">Change your password</a><br>
+              <small style="color: rgba(255, 255, 255, 0.521); font-size: 14px;">Make your password stronger</small><br>
+              <a href=" {{url_for('users.edit_password')}} " style="color: white;">Change <i class="fa fa-angle-right"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <i class="fa fa-home" style="font-size: 30px; color: white;"></i><br>
+              <a href="" style="color: white; text-decoration: none;">Manage your address</a><br>
+              <small style="color: rgba(255, 255, 255, 0.521); font-size: 14px;">Make your addresses</small><br>
+              <a href="" style="color: white;">Manage <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-3 col-sm-12 text-center pl-5 py-4">
+          <img src="{{url_for('static', filename='profile_pics/' + current_user.profile_image)}}" class="rounded-circle" alt="" style="width: 180px; height: 200px;"> <br>
+          <a href="{{url_for('users.change_profile_pic')}}" class="pl-3 text-center" style="width: 100%; height: 45vw; object-fit: cover;"> Change profile</a>
+        </div>
+
+        <div class="col-md-9 py-3">
+          <h1 class="" style="text-transform: capitalize;">{{current_user.first_name}} {{current_user.last_name}}</h1>
+          <a href=" {{url_for('users.edit_name')}} ">Edit name</a><br><br>
+
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <p style="font-size: 20px;"><i class="fa fa-user"></i> {{current_user.email}}</p>
+            </div>
+            <div class="col-md-5 col-sm-5">
+              <a href="" style="font-size: 20px;">Manage how to sign in your account</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <p style="font-size: 20px;"><img src="../static/images/cake.svg" style="width: 20px; height: 22px;"> {{current_user.birthday}}</p>
+            </div>
+            <div class="col-md-5 col-sm-5">
+              <a href="" style="font-size: 20px;">Edit date of birth</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <p style="font-size: 20px;"><i class="fa fa-phone"></i>{{ current_user.phone_no }}</p>
+            </div>
+            <div class="col-md-5 col-sm-5">
+              <a href="" style="font-size: 20px;">Change phone number</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <p style="font-size: 20px;"><i class="fa fa-user"></i> {{ current_user.username }}</p>
+            </div>
+            <div class="col-md-5 col-sm-5">
+              <a href="" style="font-size: 20px;">Manage how to sign in your account</a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    
+  </div>
+
+  {% endblock %}

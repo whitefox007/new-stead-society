@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <form class="form-group" method="POST" action="" enctype="multipart/form-data">
+     {{ form.hidden_tag() }}
+
+     <div class="form-group">
+     {{ form.title.label(class="form-control-label") }}
+     {{ form.title(class="form-control form-control-lg ") }}
+     </div>
+     <div class="form-group">
+     {{ form.text.label(class="form-control-label") }}
+     {{ form.text(class="form-control form-control-lg") }}
+          <script src="../static/js/ckeditor/ckeditor.js"></script>
+     </div>
+      <div class="form-group">
+     {{ form.picture.label(class="form-control-label") }}
+      {% if form.picture.errors %}
+        {{ form.picture(class="form-control is-invalid") }}
+        <div class="invalid-feedback">
+        {% for error in form.picture.errors %}
+        <span>{{ error }}</span>
+        </div>
+        {% endfor %}
+        {% else %}
+        {{ form.picture(class="form-control") }}
+    {% endif %}
+     </div>
+     <div class="form-group">
+         {{ form.submit(class="btn btn-outline-info") }}
+     </div>
+  </form>
+
+</div>
+
+    <script>
+        CKEDITOR.replace('text')
+
+    </script>
+
+
+{% endblock content %}
+
+{% block scripts %}
+{{ super() }}
+{{ pagedown.include_pagedown() }}
+{% endblock %}

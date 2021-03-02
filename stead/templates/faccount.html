@@ -1,0 +1,70 @@
+{% extends 'layout.html'%}
+
+{% block content%}
+  <div class="container-fluid">
+      <div class="row" style="background-color: rgba(34, 48, 180, 0.795);">
+        <div class="col-md-4 col-sm-12 pl-5 px-5 py-5">
+          <h1 style="color: white;">Your info</h1>
+        </div>
+  
+      <div class="row">
+        <div class="col-md-3 col-sm-12 text-center pl-5 py-4">
+          <img src="{{url_for('static', filename='profile_pics/' + user.profile_image)}}" class="rounded-circle" alt="" style="width: 180px; height: 200px;"> <br>
+            <div>
+            {% if current_user.can(Permission.FOLLOW) and user != current_user %}
+                {% if not current_user.is_following(user) %}
+                <a href="{{ url_for('users.follow', username=user.username) }}"
+                class="btn btn-primary">Follow</a>
+                {% else %}
+                <a href="{{ url_for('users.unfollow', username=user.username) }}"
+                class="btn btn-default">Unfollow</a>
+                {% endif %}
+                {% endif %}
+                <a href="{{ url_for('users.followers', username=user.username) }}">
+                Followers: <span class="badge">{{ user.followers.count() - 1 }}</span>
+                </a>
+                <a href="{{ url_for('users.followed_by', username=user.username) }}">>
+                Following: <span class="badge">{{ user.followed.count() - 1 }}</span>
+                </a>
+                {% if current_user.is_authenticated and user != current_user and
+                user.is_following(current_user) %}
+                | <span class="label label-default">Follows you</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-9 py-3">
+          <h1 class="" style="text-transform: capitalize;">{{user.first_name}} {{user.last_name}}</h1>
+        </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <p style="font-size: 20px;"><i class="fa fa-user"></i>{{user.email}}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <p style="font-size: 20px;"><img src="../static/images/cake.svg" style="width: 20px; height: 22px;"> {{user.birthday}}</p>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <p style="font-size: 20px;"><i class="fa fa-phone"></i>{{ user.phone_no }}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <p style="font-size: 20px;"><i class="fa fa-user"></i>{{ user.username }}</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    
+  </div>
+
+  {% endblock %}

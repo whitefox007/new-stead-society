@@ -1,0 +1,388 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row"></div>
+        <div class="row">
+            <div class="col-md-10 col-sm-10">
+                <h2>Forums</h2>
+            </div>
+
+<!--
+            <div class="col-md-2 col-sm-2">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width: 100%;">
+                    Start new topic
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Select Forum</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <select title="Se
+                                                                             ////                                                                                             B lect Forum" class="selectpicker" style="width: 300px;">
+                                    <optgroup label="Stead">
+                                      <option>General</option>
+                                      <option>Suggestions</option>
+                                      <option>Critique</option>
+                                    </optgroup>
+                                    <optgroup label="Science">
+                                      <option>Physics</option>
+                                      <option>Chemistry</option>
+                                      <option>Mathematics</option>
+                                      <option>Biology</option>
+                                    </optgroup>
+                                    <optgroup label="Technology">
+                                        <option>Programming</option>
+                                        <option>Electronics</option>
+                                    </optgroup>
+                                    <optgroup label="Engineering">
+                                        <option>System Engineering</option>
+                                        <option>Project Management</option>
+                                        <option>Civil Engineering</option>
+                                        <option>Mechanical Engineering</option>
+                                        <option>Electrical Engineering</option>
+                                    </optgroup>
+                                    <optgroup label="Arts">
+                                        <option>Processing </option>
+                                        <option>HCI Design</option>
+                                    </optgroup>
+                                    <option label="Development"></option>
+                                  </select>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue</button>
+                      </div>
+                    </div>
+                  </div>
+            </div> 
+          
+        -->
+      </div>
+        <!-- The Stead Forum branche -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="accordion p-3 border bg-light" id="accordionExample">
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="text-decoration: none; text-transform: uppercase;">
+                            Stead
+                          </button>
+                        </h2>
+                      </div>
+                  
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                          <!-- First row in the Stead Forum -->
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <i class="fa fa-comments-o"></i><a href="{{ url_for('forum.chat') }}" class="pl-2" style="text-decoration: none; ">General</a>
+                                <p class="pl-4">Discuss everything about Stead</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <small style="font-size: 25px; text-align: center;">{{ general_num }}</small><br>
+                                <span class="text-muted pl-2">posts</span>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <img class="rounded-circle" src="{{ url_for('static', filename='profile_pics/' + general.author.profile_image) }}" style="width: 35px; height: 45px;">
+                                </div>
+                                <div class="col-md-10">
+                                  <a href="#" style="text-decoration: none; color: black;">{{ general.content }}</a>
+                                  <p>By <a href="{{url_for('forum.user_posts', username=general.author.username) }}" style="text-decoration: none; color: cadetblue;">{{ general.author.username }}</a></p>
+                                  <p style="margin-top: -16px;">{{ general.date_posted.strftime('%B, %d, %Y') }}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+                          
+                            <!-- Second row under Stead forum-->
+                            <!--
+                          <div class="row" style="background-color: rgba(196, 196, 196, 0.274);">
+                            <div class="col-md-6 col-sm-6" style="margin-top: 7px;">
+                              <i class="fa fa-comments-o"></i><a href="" class="pl-2" style="text-decoration: none; ">Suggesstions</a>
+                              <p class="pl-4">Make a valueable suggestions about the pages.</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2" style="margin-top: 7px;">
+                              <small style="font-size: 25px; text-align: center;">3452</small><br>
+                              <span class="text-muted pl-2">posts</span>
+                            </div>
+                            <div class="col-md-4 col-sm-4" style="margin-top: 7px;">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <img src="../static/images/male.png" style="width: 35px; height: 45px;">
+                                </div>
+                                <div class="col-md-10">
+                                  <a href="#" style="text-decoration: none; color: black;">Try to change the background</a>
+                                  <p>By <a href="" style="text-decoration: none; color: cadetblue;">Emmanuel Sesay</a></p>
+                                  <p style="margin-top: -16px;">Monday 9:30AM</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                            <!-- Third row in the Stead Forum -->
+                            <!--
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6 style="margin-top: 7px;">
+                              <i class="fa fa-comments-o"></i><a href="" class="pl-2" style="text-decoration: none; ">Critiques</a>
+                              <p class="pl-4">Offer constructive criticism about the site.</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2" style="margin-top: 7px;">
+                              <small style="font-size: 25px; text-align: center;">4215</small><br>
+                              <span class="text-muted pl-2">posts</span>
+                            </div>
+                            <div class="col-md-4 col-sm-4" style="margin-top: 7px;">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <img src="../static/images/avarta.png" style="width: 35px; height: 45px;">
+                                </div>
+                                <div class="col-md-10">
+                                  <a href="#" style="text-decoration: none; color: black;">The site is slow, just shut it down.</a>
+                                  <p>By <a href="" style="text-decoration: none; color: cadetblue;">Fatmata Kargbo</a></p>
+                                  <p style="margin-top: -16px;">Sunday 10:30PM</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          -->
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- End of the stead forum-->
+    <!--        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="accordion p-3 border bg-light" id="accordionExample">
+                    <div class="card">
+                      <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" style="text-decoration: none; text-transform: uppercase;">
+                            Science
+                          </button>
+                        </h2>
+                      </div>
+                  
+                      <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                        -->
+
+                          <!-- First row in the Science Forum -->
+                          <!--
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                              <i class="fa fa-comments-o"></i><a href="" class="pl-2" style="text-decoration: none; ">Physics</a>
+                              <p class="pl-4">The physics behind Stead projects is discuss here and more about other physics.</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                              <small style="font-size: 25px; text-align: center;">215</small><br>
+                              <span class="text-muted pl-2">posts</span>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <img src="../static/images/male.png" style="width: 35px; height: 45px;">
+                                </div>
+                                <div class="col-md-10">
+                                  <a href="#" style="text-decoration: none; color: black;">Physics is life best known knowledge.</a>
+                                  <p>By <a href="" style="text-decoration: none; color: cadetblue;">Augustus Jibba</a></p>
+                                  <p style="margin-top: -16px;">Tuesday 4:41AM</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        -->
+
+
+                          <!-- Second row under Stead forum-->
+
+                          <!--
+                          <div class="row" style="background-color: rgba(196, 196, 196, 0.274);">
+                            <div class="col-md-6 col-sm-6" style="margin-top: 7px;">
+                              <i class="fa fa-comments-o"></i><a href="" class="pl-2" style="text-decoration: none; ">Mathematics</a>
+                              <p class="pl-4">Discuss the mathematics behind all projects here.</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2" style="margin-top: 7px;">
+                              <small class="text-center" style="font-size: 25px; text-align: center;">452</small><br>
+                              <span class="text-muted pl-2">posts</span>
+                            </div>
+                            <div class="col-md-4 col-sm-4" style="margin-top: 7px;">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <img src="../static/images/male.png" style="width: 35px; height: 45px;">
+                                </div>
+                                <div class="col-md-10">
+                                  <a href="#" style="text-decoration: none; color: black;">God is the best mathematician.</a>
+                                  <p>By <a href="" style="text-decoration: none; color: cadetblue;">Augustus Jibba</a></p>
+                                  <p style="margin-top: -16px;">Tuesday 5:04AM</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+-->
+
+                            <!-- Third row in the Stead Forum -->
+                            <!--
+                          <div class="row">
+                            <div class="col-md-6 col-sm-6" style="margin-top: 7px;">
+                              <i class="fa fa-comments-o"></i><a href="" class="pl-2" style="text-decoration: none; ">Chemistry</a>
+                              <p class="pl-4">Let talks about the chemistry of our projects here.</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2" style="margin-top: 7px;">
+                              <small style="font-size: 25px; text-align: center;">4215</small><br>
+                              <span class="text-muted pl-2">posts</span>
+                            </div>
+                            <div class="col-md-4 col-sm-4" style="margin-top: 7px;">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <img src="../static/images/avarta.png" style="width: 35px; height: 45px;">
+                                </div>
+                                <div class="col-md-10">
+                                  <a href="#" style="text-decoration: none; color: black;">What is the chemical formula of the rocket fuel?</a>
+                                  <p>By <a href="" style="text-decoration: none; color: cadetblue;">Fatmata Kargbo</a></p>
+                                  <p style="margin-top: -16px;">Wednesday 5:47AM</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        -->
+
+                          <!-- Fourth row under Stead forum-->
+                          <!--
+                          <div class="row" style="background-color: rgba(196, 196, 196, 0.274);">
+                            <div class="col-md-6 col-sm-6" style="margin-top: 7px;">
+                              <i class="fa fa-comments-o"></i><a href="" class="pl-2" style="text-decoration: none; ">Biology</a>
+                              <p class="pl-4">M.</p>
+                            </div>
+                            <div class="col-md-2 col-sm-2" style="margin-top: 7px;">
+                              <small style="font-size: 25px; text-align: center;">3452</small><br>
+                              <span class="text-muted pl-2">posts</span>
+                            </div>
+                            <div class="col-md-4 col-sm-4" style="margin-top: 7px;">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <img src="../static/images/male.png" style="width: 35px; height: 45px;">
+                                </div>
+                                <div class="col-md-10">
+                                  <a href="#" style="text-decoration: none; color: black;">Try to change the background</a>
+                                  <p>By <a href="" style="text-decoration: none; color: cadetblue;">Emmanuel Sesay</a></p>
+                                  <p style="margin-top: -16px;">Monday 9:30AM</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          -->
+                        
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+      
+        <!-- End of the science forum-->
+
+        <!--
+        <div class="row">
+          <div class="col-md-12">
+              <div class="accordion p-3 border bg-light" id="accordionExample">
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne" style="text-decoration: none; text-transform: uppercase;">
+                          Technology
+                        </button>
+                      </h2>
+                    </div>
+                
+                    <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        -->
+                        <!-- First row in the Science Forum -->
+                      <!--
+                        <div class="row">
+                          <div class="col-md-6 col-sm-6">
+                            <i class="fa fa-comments-o"></i><a href="" class="pl-2" style="text-decoration: none; ">Electronics</a>
+                            <p class="pl-4">The physics behind Stead projects is discuss here and more about other physics.</p>
+                          </div>
+                          <div class="col-md-2 col-sm-2">
+                            <small style="font-size: 25px; text-align: center;">215</small><br>
+                            <span class="text-muted pl-2">posts</span>
+                          </div>
+                          <div class="col-md-4 col-sm-4">
+                            <div class="row">
+                              <div class="col-md-2">
+                                <img src="../static/images/male.png" style="width: 35px; height: 45px;">
+                              </div>
+                              <div class="col-md-10">
+                                <a href="#" style="text-decoration: none; color: black;">Physics is life best known knowledge.</a>
+                                <p>By <a href="" style="text-decoration: none; color: cadetblue;">Augustus Jibba</a></p>
+                                <p style="margin-top: -16px;">Tuesday 4:41AM</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      -->
+
+                        <!-- Second row under Stead forum-->
+                        <!--
+                        <div class="row" style="background-color: rgba(196, 196, 196, 0.274);">
+                          <div class="col-md-6 col-sm-6" style="margin-top: 7px;">
+                              <i class="fa fa-comments-o"></i><a href="" class="pl-2" style="text-decoration: none; ">Programming</a>
+                              <p class="pl-4">Discuss the mathematics behind all projects here.</p>
+                          </div>
+                          <div class="col-md-2 col-sm-2" style="margin-top: 7px;">
+                              <small class="text-center" style="font-size: 25px; text-align: center;">452</small><br>
+                              <span class="text-muted pl-2">posts</span>
+                          </div>
+                          <div class="col-md-4 col-sm-4" style="margin-top: 7px;">
+                            <div class="row">
+                              <div class="col-md-2">
+                                <img src="../static/images/male.png" style="width: 35px; height: 45px;">
+                              </div>
+                              <div class="col-md-10">
+                                <a href="#" style="text-decoration: none; color: black;">God is the best mathematician.</a>
+                                <p>By <a href="" style="text-decoration: none; color: cadetblue;">Augustus Jibba</a></p>
+                                <p style="margin-top: -16px;">Tuesday 5:04AM</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <br>
+      
+    
+    -->    
+
+        </div>
+        <br>
+    </div>
+{% endblock %}

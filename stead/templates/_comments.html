@@ -1,0 +1,27 @@
+<ul class="comments">
+    {% for comment in comments %}
+    <li class="comment">
+        <div class="media">
+            <div class="comment-thumbnail">
+                <a href="#">
+                    <img class="rounded-circle mt-3" src="{{ url_for('static', filename='profile_pics/' + comment.author.profile_image) }}" class="mr-3" alt="..." width="64" height="64">
+                </a>
+            </div>
+            <div class="media-body mt-1 mb-1 ml-4">
+                <div class="comment-content">
+                    <div class="comment-date">
+                    </div>
+                    <div class="comment-author">
+                        <a href="#" style="text-decoration: none;">{{ comment.author.username }}</a>
+                    </div>
+                    <div class="comment-body" style="color: black;">
+                        {{ comment.body }}
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+<button class="btn btn-outline-primary mt-2 float-right"><a href="{{ url_for('forum.chat')}}" style="text-decoration: none; color: white;">Back</a></button>

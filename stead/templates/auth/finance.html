@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}STEAD- Finance{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Update Financial Record</h1>
+</div>
+<div class="col-md-4">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+         {{ form.financial_recorded.label(class="form-control-label") }}
+    {% if form.financial_recorded.errors %}
+        {{ form.financial_recorded(class="form-control is-invalid") }}
+        <div class="invalid-feedback">
+        {% for error in form.financial_recorded.errors %}
+        <span>{{ error }}</span>
+        </div>
+        {% endfor %}
+        {% else %}
+        {{ form.financial_recorded(class="form-control") }}
+    {% endif %}
+
+        <div>
+        {{ form.submit(class="btn btn-outline-info mt-5") }}
+        </div>
+        </form>
+</div>
+{% endblock %}

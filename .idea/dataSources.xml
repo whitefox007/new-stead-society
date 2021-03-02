@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="data" uuid="3824c780-023d-4154-a820-c5c5a7d8ef57">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\\Users\Junior\Desktop\steadsociety\data.sqlite</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.25.1/license.txt</url>
+        </library>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.25.1/sqlite-jdbc-3.25.1.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - postgres@localhost" uuid="2f754558-7313-4549-bc24-47415914886c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:8080/myDB</jdbc-url>
+    </data-source>
+  </component>
+</project>

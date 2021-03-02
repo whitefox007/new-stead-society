@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="row">
+<div class="col-md-12 col-lg-12">
+    <h5>Registered Student:</h5>
+    <hr>
+    <div class="card card-body">
+        <a class="btn btn-primary btn-sm btn-block">Add Student</a>
+        <table class="table table-sm">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone #</th>
+                <th>Address</th>
+                <th>course1</th>
+                <th>course2</th>
+                <th>course3</th>
+                <th>course4</th>
+            </tr>
+            {% for student in students %}
+                <tr>
+                    <td>{{ student.first_name }}</td>
+                    <td>{{ student.middle_name }}</td>
+                    <td>{{ student.last_name }}</td>
+                    <td>{{ student.email }}</td>
+                    <td>{{ student.phone_no }}</td>
+                    <td>{{ student.address }}</td>
+                    <td>{{ student.course1 }}</td>
+                    <td>{{ student.course2 }}</td>
+                    <td>{{ student.course3 }}</td>
+                    <td>{{ student.course4 }}</td>
+                </tr>
+            {% endfor %}
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}

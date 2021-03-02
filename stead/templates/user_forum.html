@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+
+    {# Go through each blog post #}
+    {% for post in posts %}
+
+    <div class="card" >
+
+      <div class="card-body">
+
+
+        <h2><a class="card-title" href="  {{ url_for('news_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h2>
+        <a href="{{ url_for('users.account', username=post.author.username) }}">Written By: {{ post.author.username }}</a>
+        <p>Published on: {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
+        <p class="card-text">{{ post.content }}</p>
+
+      </div>
+        <div class="post-footer">
+          <a href="{{ url_for('forum.post', id=post.id) }}#comments">
+            <span class="label label-primary">{{ post.comments.count() }} Comments</span>
+          </a>
+            {% if post.author == current_user %}
+                <a href="{{ url_for('forum.delete_post', blog_post_id=post.id) }}">
+                    <span class="label label-default">delete</span></a>
+                {% endif %}
+    </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

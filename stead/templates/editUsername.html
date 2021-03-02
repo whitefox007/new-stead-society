@@ -1,0 +1,60 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+  <div class="container-fluid">
+      <div class="row" style="background-color: rgba(34, 48, 180, 0.795);">
+        <div class="col-md-4 col-sm-12 pl-5 px-5">
+          <h1 style="color: white; margin-top: 70px;">Your info</h1>
+        </div>
+
+        <div class="col-md-8 col-sm-12 pl-5 px-5 py-5">
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <i class="fa fa-key" style="font-size: 30px; color: white;"></i><br>
+              <a href="" style="color: white; text-decoration: none;">Change your password</a><br>
+              <small style="color: rgba(255, 255, 255, 0.521); font-size: 14px;">Make your password stronger</small><br>
+              <a href="" style="color: white;">Change <i class="fa fa-angle-right"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <br>
+              <i class="fa fa-home" style="font-size: 30px; color: white;"></i><br>
+              <a href="" style="color: white; text-decoration: none;">Manage your address</a><br>
+              <small style="color: rgba(255, 255, 255, 0.521); font-size: 14px;">Make your addresses</small><br>
+              <a href="" style="color: white;">Manage <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-4 col-sm-12 text-center pl-5 py-4">
+          <img src="{{url_for('static', filename='profile_pics/' + current_user.profile_image)}}" class="rounded-circle" alt="" style="width: 180px; height: 200px;"> <br>
+          <a href="" class="pl-3 text-center"> Change profile</a>
+        </div>
+
+        <div class="col-md-8 py-4">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="col-md-4">
+                {{ form.firstName.label(class="form-group") }}
+                    {{ form.firstName(class="form-group", style="width: 100%; border-color: black; border-radius: 5px;")}}
+                </div>
+                <div class="col-md-4">
+                {{ form.lastName.label(class="form-group") }}
+                    {{ form.lastName(class="form-group", style="width: 100%; border-color: black; border-radius: 5px;")}}
+                </div>
+            </div>
+            <div class="row">
+                <div class= "col-md-12 pl-3">
+                    {{ form.submit(class="btn btn-primary", style="width: auto") }}
+                    <a href=" {{url_for('core.account')}} "><button type="button" class="btn btn-secondary disable" style="width: auto;">Cancel</button></a>
+                </div>
+            </div>
+        </form>
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: ghostwhite;
+}
+
+.nav-header, .nav {
+    /* Style for "Rectangle" */
+    background-color: white;
+    color: Black;
+}
+
+ul, .navbar-brand {
+    color: #ffffff;
+    font-family: 'Arsenal';
+    font-size: 20px;
+}
+
+#logtitle{
+    color: black;
+}
+
+#sign {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      border-radius: 12px;
+      align-content: center;
+      width: 20px;
+}
+
+#form-style{
+    border-radius: 20px;
+}
+
+#projects{
+    background-color: white;
+    text-align: center;
+}
+
+#educattion {
+    background-color: black;
+    text-align: center;
+}
+
+h4, h5 {
+    text-align: center;
+    align-content: center;
+}
+
+h5 {
+    color: Red;
+}
+
+#more {
+    align-content: center;
+    align-items: center;
+    border: none;
+}
+
+#caution {
+    font-family: Monotype Corsiva;
+    font-size: 40px;
+}
+
+/* This CSS below is for the account page */
+
+.profile {
+    margin: 20px 0;
+}
+
+.profile-sidebar {
+    padding: 20px 0 10px 0;
+    background: #fff;
+}
+
+.profile-user-pic{
+    float: none;
+    margin: 0 auto;
+    width: 50%;
+    height: 50%;
+}
+
+.profile-user-title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-user-name{
+    color: #5a73a1;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.profile-user-job{
+    text-transform: uppercase;
+    color: #5babd1;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.profile-user-menu{
+    margin-top: 30px;
+}
+
+.nav li{
+    border-bottom: 2px solid #f0f4f7 !important;
+}
+
+.profile-user-menu ul li a{
+    color: #93a3b5;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.profile-user-menu ul li a i{
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.profile-user-menu ul li a:hover{
+    background-color: #fafcfd;
+    color: #5babd1;
+}
+
+li.active a {
+    color: #5babd1;
+    background-color: #f6fafb;
+    border-left: 2px solid #5babd1;
+    margin-left: -3px;
+}
+
+li{
+    border-bottom: 1px solid #f6f4f7;
+}
+
+.profile-content{
+    padding: 20px;
+    background: #fff;
+    min-height: 460px;
+}

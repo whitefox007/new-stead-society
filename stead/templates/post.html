@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+{% block title %}Flasky - Post{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    {% include '_posts.html' %}
+    <h4 id="comments">Comments</h4>
+    <div class="comment-form">
+        <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.body.label }} 
+        {{ form.body(class="form-control shadow-sm p-3 mb-2 bg-white rounded") }}
+        {{ form.submit(class="btn btn-outline-info mt-2") }}<br><br>
+        </form>
+    </div>
+    {% include '_comments.html' %}
+</div>
+
+    
+{% endblock %}
